@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { CaixaComponent } from './operacional/caixa/caixa.component';
+import { RecargaComponent } from './operacional/recarga/recarga.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     FooterComponent,
     HomeComponent,
+    CaixaComponent,
+    RecargaComponent,
   ],
   imports: [
     AppRoutingModule,
