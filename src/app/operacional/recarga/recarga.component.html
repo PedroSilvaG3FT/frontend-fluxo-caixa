@@ -1,1 +1,16 @@
-<p>recarga works!</p>
+<div class="content center-content">
+    
+    <div class="row">
+        <div class="col-xs-4 col-4 col-md-4 form-group">
+            <input type="text" placeholder="Telefone" class="form-control" mask="(00) 0 0000-0000" >
+        </div>
+
+        <div class="col-xs-4 col-4 col-md-4 form-group">
+            <input currencyMask class="form-control" placeholder="Valor" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" />
+        </div>
+
+        <div class="col-xs-4 col-4 col-md-4 form-group">
+            <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker>
+        </div>
+    </div>
+</div>
