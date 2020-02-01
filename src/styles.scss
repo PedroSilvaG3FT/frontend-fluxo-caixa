@@ -165,10 +165,18 @@ tab {
   box-shadow: none;
   border-radius: 0px;
 }
+
+.card-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  h5 {
+    text-align: center;
+  }
+}
 //CARDS
-
-
-
 
 @media only screen and (max-width: 768px) {
   .content {
