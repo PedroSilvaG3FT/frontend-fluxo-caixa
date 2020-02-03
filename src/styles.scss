@@ -49,15 +49,20 @@ button {
     width: 100%;
     height: auto;
     min-height: 60%;
+    padding-left:  15%;
+    padding-right: 15%;
 }
 
 .center-content {
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: column;
     padding-left:  15%;
     padding-right: 15%;
+    padding: 40px;
+    width: 100%;
+    height: auto;
+    min-height: 60%;
 }
 
 .point {

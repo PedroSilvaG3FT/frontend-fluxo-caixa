@@ -15,7 +15,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CaixaComponent } from './operacional/caixa/caixa.component';
 import { RecargaComponent } from './operacional/recarga/recarga.component';
@@ -25,7 +24,6 @@ import { RecargaComponent } from './operacional/recarga/recarga.component';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    FooterComponent,
     HomeComponent,
     CaixaComponent,
     RecargaComponent,
