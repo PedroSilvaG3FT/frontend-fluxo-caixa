@@ -1,22 +1,26 @@
 <div class="content ">
+    <form #recargaForm="ngForm">
 
-    <div class="row">
-        <div class="col-xs-3 col-3 col-md-3 form-group">
-            <input type="text" placeholder="Telefone" class="form-control" mask="(00) 0 0000-0000" [(ngModel)]="recarga.telefone">
-        </div>
+        <div class="row">
+            <div class="col-xs-3 col-3 col-md-3 form-group">
+                <input type="text" name="telefone" placeholder="Telefone" class="form-control" mask="(00) 0 0000-0000"
+                    [(ngModel)]="recarga.telefone" required>
+            </div>
 
-        <div class="col-xs-3 col-3 col-md-3 form-group">
-            <input currencyMask class="form-control" placeholder="Valor"
-                [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" [(ngModel)]="recarga.valor"/>
-        </div>
+            <div class="col-xs-3 col-3 col-md-3 form-group">
+                <input currencyMask class="form-control" placeholder="Valor" name="valor"
+                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" [(ngModel)]="recarga.valor" required />
+            </div>
 
-        <div class="col-xs-3 col-3 col-md-3 form-group">
-            <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker [(ngModel)]="recarga.dataInclusao">
+            <div class="col-xs-3 col-3 col-md-3 form-group">
+                <input type="text" name="dataInclusao" placeholder="Datepicker" class="form-control" bsDatepicker
+                    [(ngModel)]="recarga.dataInclusao" required >
+            </div>
+            <div class="col-xs-3 col-3 col-md-3 form-group">
+                <button class="btn btn-primary btn-block" (click)="insertRecarga()" [disabled]="!recargaForm.form.valid">Inserir</button>
+            </div>
         </div>
-        <div class="col-xs-3 col-3 col-md-3 form-group">
-          <button class="btn btn-primary btn-block" (click)="insertRecarga()" >Inserir</button>
-        </div>
-    </div>
+    </form>
 
     <br>
 
@@ -30,7 +34,7 @@
                     <th scope="col">Usuário</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let recarga of lstRecargas" >
+            <tbody *ngFor="let recarga of lstRecargas">
                 <tr>
                     <td>{{recarga.telefone}}</td>
                     <td>{{recarga.valor | currency:'BRL':true}}</td>
