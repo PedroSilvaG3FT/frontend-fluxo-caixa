@@ -8,10 +8,11 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [collapse]="isCollapsed" [isAnimated]="true">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link">Link 1</a>
-            <a class="nav-item nav-link">Link 2</a>
-            <a class="nav-item nav-link">Link 3</a>
+        <div class="navbar-nav ">
+            <a [routerLink]="['home']" class="nav-item nav-link">Home</a>
+            <a [routerLink]="['operacional/caixa']" class="nav-item nav-link">Caixa</a>
+            <a [routerLink]="['operacional/recarga']" class="nav-item nav-link">Recargas</a>
+            <a [routerLink]="['']" class="nav-item nav-link">Relatórios</a>
         </div>
     </div>
 </nav>
