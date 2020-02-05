@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recarga } from 'src/app/models/recarga';
 
 @Component({
   selector: 'app-recarga',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recarga.component.scss']
 })
 export class RecargaComponent implements OnInit {
-  public lstRecargas = listTeste;
+  public lstRecargas: any[] = [];
   public recarga: Recarga = new Recarga();
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    listTeste.forEach(x => this.lstRecargas.push(x));
+  }
 
   insertRecarga() {
     console.log("RECARGA : ", this.recarga);
@@ -19,36 +22,46 @@ export class RecargaComponent implements OnInit {
     this.recarga = new Recarga();
   }
 
+  removerRecarga(recarga) {
+    this.lstRecargas.splice(this.lstRecargas.indexOf(recarga, 1))
+  }
+
 }
 
-export class Recarga {
-  telefone: any;
-  valor: any;
-  dataInclusao: any;
-}
-
- export const listTeste = [
+export const listTeste = [
   {
+    recargaId: 1,
+    usuarioId: 1,
     telefone: "(11) 95888-5825",
     valor: 15.00,
-    dataInclusao: new Date()
+    dataInclusao: new Date(),
+    usuario: ""
   },
 
   {
+    recargaId: 2,
+    usuarioId: 1,
     telefone: "(11) 95888-5825",
     valor: 15.00,
-    dataInclusao: new Date()
+    dataInclusao: new Date(),
+    usuario: ""
   },
 
   {
+    recargaId: 3,
+    usuarioId: 1,
     telefone: "(11) 95888-5825",
     valor: 15.00,
-    dataInclusao: new Date()
+    dataInclusao: new Date(),
+    usuario: ""
   },
 
   {
+    recargaId: 4,
+    usuarioId: 1,
     telefone: "(11) 95888-5825",
     valor: 15.00,
-    dataInclusao: new Date()
+    dataInclusao: new Date(),
+    usuario: ""
   },
 ]
