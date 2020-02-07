@@ -7,6 +7,7 @@ import {
   BsDropdownModule,
   TooltipModule,
   BsDatepickerModule,
+  TypeaheadModule
 } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import { RecargaComponent } from './operacional/recarga/recarga.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     TabsModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    TypeaheadModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

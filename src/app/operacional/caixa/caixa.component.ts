@@ -10,6 +10,19 @@ export class CaixaComponent implements OnInit {
   public lstCaixa: any[] = [];
   public caixa: Caixa = new Caixa();
 
+  states: string[] = [
+    'Arroz 5kg',
+    'Feijão 1kg',
+    'Macarrão',
+    'Mussarela',
+    'Pretunto',
+    'Ovo',
+    'Galimha',
+    'Batata Palha',
+    'Laranja',
+    'Melancia',
+  ];
+
   constructor() { }
 
   ngOnInit() {
