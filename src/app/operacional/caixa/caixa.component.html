@@ -7,24 +7,24 @@
                     [(ngModel)]="caixa.descricao" required>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-8 form-group">
+            <div class="col-xs-12 col-sm-12 col-md-4 form-group">
                 <input currencyMask class="form-control" placeholder="Valor" name="valor"
                     [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" [(ngModel)]="caixa.valor" required />
             </div>
         </div>
 
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-8 form-group">
+            <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                 <input type="text" name="telefone" placeholder="Telefone" class="form-control" mask="(00) 0 0000-0000"
                     [(ngModel)]="caixa.telefone" required>
             </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-8 form-group">
+            <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                 <input type="text" name="dataInclusao" placeholder="Data" class="form-control" bsDatepicker
                     [(ngModel)]="caixa.dataInclusao" required>
             </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-8 form-group">
+            <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                 <button class="btn btn-primary btn-block" (click)="insertCaixa()"
                     [disabled]="!caixaForm.form.valid">Inserir</button>
             </div>
