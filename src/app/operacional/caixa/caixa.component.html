@@ -49,7 +49,15 @@
             <tr>
                 <td>{{caixa.descricao}}</td>
                 <td>{{caixa.valor | currency:'BRL':true}}</td>
-                <td>Pedro Henrique</td>
+                <td>
+                    <select name="usuario" class="form-control">
+                        <option value="1">Pedro Henrique</option>
+                        <option value="1">Usuario</option>
+                        <option value="1">Usuario</option>
+                        <option value="1">Usuario</option>
+                        <option value="1">Usuario</option>
+                    </select>
+                </td>
                 <td>{{caixa.telefone | mask: '(00) 0 0000-0000'}}</td>
                 <td>{{caixa.dataInclusao | date: 'dd/MM/yyyy hh:mm'}}</td>
 
