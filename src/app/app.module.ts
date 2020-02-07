@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from "ngx-mask";
 import { CurrencyMaskModule } from "ng2-currency-mask";
-import { 
-  CollapseModule, 
+import {
+  CollapseModule,
   BsDropdownModule,
-  TooltipModule, 
-  BsDatepickerModule 
+  TooltipModule,
+  BsDatepickerModule,
 } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
@@ -36,7 +36,7 @@ import { RecargaComponent } from './operacional/recarga/recarga.component';
     NgxMaskModule.forRoot(),
     CurrencyMaskModule,
 
-    CollapseModule.forRoot(), 
+    CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     TabsModule.forRoot(),

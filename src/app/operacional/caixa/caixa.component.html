@@ -1,3 +1,62 @@
-<div class="content center-content">
-    CAIXA
+<div class="content ">
+    <form #caixaForm="ngForm">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 form-group">
+                <input type="text" name="descricao" placeholder="Descrição produto" class="form-control"
+                    [(ngModel)]="caixa.descricao" required>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-8 form-group">
+                <input currencyMask class="form-control" placeholder="Valor" name="valor"
+                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" [(ngModel)]="caixa.valor" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-8 form-group">
+                <input type="text" name="telefone" placeholder="Telefone" class="form-control" mask="(00) 0 0000-0000"
+                    [(ngModel)]="caixa.telefone" required>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-8 form-group">
+                <input type="text" name="dataInclusao" placeholder="Data" class="form-control" bsDatepicker
+                    [(ngModel)]="caixa.dataInclusao" required>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-8 form-group">
+                <button class="btn btn-primary btn-block" (click)="insertCaixa()"
+                    [disabled]="!caixaForm.form.valid">Inserir</button>
+            </div>
+
+        </div>
+    </form>
+
+    <br>
+
+    <table class="table table-sm table-responsive-sm table-striped ">
+        <thead>
+            <tr>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Vendedor</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Data Inclusão</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let caixa of lstCaixa">
+            <tr>
+                <td>{{caixa.descricao}}</td>
+                <td>{{caixa.valor | currency:'BRL':true}}</td>
+                <td>Pedro Henrique</td>
+                <td>{{caixa.telefone | mask: '(00) 0 0000-0000'}}</td>
+                <td>{{caixa.dataInclusao | date: 'dd/MM/yyyy hh:mm'}}</td>
+
+                <td>
+                    <button class="btn btn-outline-danger btn-block" (click)="removeCaixa(caixa)">Remover</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -2,21 +2,21 @@
     <form #recargaForm="ngForm">
 
         <div class="row">
-            <div class="col-xs-3 col-3 col-md-3 form-group">
+            <div class="col-xs-12 col-sm-12 col-md-3 form-group">
                 <input type="text" name="telefone" placeholder="Telefone" class="form-control" mask="(00) 0 0000-0000"
                     [(ngModel)]="recarga.telefone" required>
             </div>
 
-            <div class="col-xs-3 col-3 col-md-3 form-group">
+            <div class="col-xs-12 col-sm-12 col-md-3 form-group">
                 <input currencyMask class="form-control" placeholder="Valor" name="valor"
                     [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" [(ngModel)]="recarga.valor" required />
             </div>
 
-            <div class="col-xs-3 col-3 col-md-3 form-group">
+            <div class="col-xs-12 col-sm-12 col-md-3 form-group">
                 <input type="text" name="dataInclusao" placeholder="Datepicker" class="form-control" bsDatepicker
                     [(ngModel)]="recarga.dataInclusao" required>
             </div>
-            <div class="col-xs-3 col-3 col-md-3 form-group">
+            <div class="col-xs-12 col-sm-12 col-md-3 form-group">
                 <button class="btn btn-primary btn-block" (click)="insertRecarga()"
                     [disabled]="!recargaForm.form.valid">Inserir</button>
             </div>
@@ -25,30 +25,27 @@
 
     <br>
 
-    <div class="row">
-        <table class="table table-sm table-striped ">
-            <thead>
-                <tr>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Valor</th>
-                    <th scope="col">Data Inclusão</th>
-                    <th scope="col">Usuário</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody *ngFor="let recarga of lstRecargas">
-                <tr>
-                    <td>{{recarga.telefone | mask: '(00) 0 0000-0000'}}</td>
-                    <td>{{recarga.valor | currency:'BRL':true}}</td>
-                    <td>{{recarga.dataInclusao | date: 'dd/MM/yyyy hh:mm'}}</td>
-                    <td>Pedro Henrique</td>
+    <table class="table table-sm table-responsive-sm table-striped ">
+        <thead>
+            <tr>
+                <th scope="col">Telefone</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Data Inclusão</th>
+                <th scope="col">Usuário</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let recarga of lstRecargas">
+            <tr>
+                <td>{{recarga.telefone | mask: '(00) 0 0000-0000'}}</td>
+                <td>{{recarga.valor | currency:'BRL':true}}</td>
+                <td>{{recarga.dataInclusao | date: 'dd/MM/yyyy hh:mm'}}</td>
+                <td>Pedro Henrique</td>
 
-                    <td>
-                        <button class="btn btn-outline-danger btn-block"
-                            (click)="removerRecarga(recarga)">Remover</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                <td>
+                    <button class="btn btn-outline-danger btn-block" (click)="removerRecarga(recarga)">Remover</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
